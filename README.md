@@ -3,7 +3,7 @@
 Dieses Todo Console App ist ein einfaches Todo-Listen-Programm, das in der Konsole ausgeführt wird. 
 
 
-Was kan mit diese App alles machen?
+Was kann oder sollte diese Anwendung können?
 
 - [x] Todo hinzufügen
 - [ ] Todo löschen
@@ -48,18 +48,18 @@ Entität: Todo
 
 
 Entität: Person =>
-	- [ ] Id             : int
-	- [ ] Name           : string
-	- [ ] Vorname        : string
-	- [ ] Geburtsdatum   : DateTime
-	- [ ] Geschlecht     : Enum (Männlich, Weiblich, Divers)
-	- [ ] E-Mail		 : string
-	- [ ] Telefonnummer  : string
-	- [ ] Adresse        : string
-	- [ ] PLZ            : string
-	- [ ] Ort            : string
-	- [ ] Land           : string
-	- [ ] Nationalität   : string
-	- [ ] Sprache        : string	
-	- [ ] Bemerkungen    : string
 
+- [ ] Id             : int
+- [ ] Name           : string
+- [ ] Vorname        : string
+- [ ] Geburtsdatum   : DateTime
+- [ ] Geschlecht     : Enum (Männlich, Weiblich, Divers)
+- [ ] E-Mail		 : string
+- [ ] Telefonnummer  : string
+- [ ] Adresse        : string
+- [ ] PLZ            : string
+- [ ] Ort            : string
+- [ ] Land           : string
+- [ ] Nationalität   : string
+- [ ] Sprache        : string	
+- [ ] Bemerkungen    : string
