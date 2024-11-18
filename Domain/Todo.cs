@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp.Tag7.Todo.Domain;
+﻿using ConsoleApp.Tag7.Todo.Domain.Enums;
+
+namespace ConsoleApp.Tag7.Todo.Domain;
 
 public class ToDo
 {
