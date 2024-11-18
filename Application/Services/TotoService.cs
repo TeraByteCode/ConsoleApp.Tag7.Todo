@@ -17,9 +17,30 @@ public class TotoService
         PersonRepository = new PersonenRepository();
     }
 
-    public void SetAktuellerBenutzer(Person person)
+    public void SetAktuellerBenutzer(string IdOrNAme)
     {
-        AktuelleBenutzer = person;
+        Person? p;
+        if (int.TryParse(IdOrNAme, out _))
+        {
+            p = PersonRepository.GetPerson(int.Parse(IdOrNAme));
+
+            if (p == null)
+            {
+                throw new Exception("Benutzer nicht gefunden");
+            }
+
+            AktuelleBenutzer = p;
+            return;
+        }
+
+        p = PersonRepository.GetPerson(IdOrNAme);
+
+        if (p == null)
+        {
+            throw new Exception("Benutzer nicht gefunden");
+        }
+
+        AktuelleBenutzer = p;
     }
 
     public void AddKategorie(Kategorie kategorie)

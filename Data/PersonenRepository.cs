@@ -6,6 +6,12 @@ public class PersonenRepository
 {
     public List<Person> ListePersonen = [];
 
+    public PersonenRepository()
+    {
+        ListePersonen.Add(new Person { Id = 1, Name = "Hans" });
+        ListePersonen.Add(new Person { Id = 2, Name = "Peter" });
+        ListePersonen.Add(new Person { Id = 3, Name = "Klaus" });
+    }
     public void Add(Person person)
     {
         if (person.Id == 0)
@@ -48,5 +54,14 @@ public class PersonenRepository
     public List<Person> GetAll()
     {
         return ListePersonen;
+    }
+
+    public Person? GetPerson(string name)
+    {
+        return ListePersonen.FirstOrDefault(p => p.Name == name);
+    }
+    public Person? GetPerson(int id)
+    {
+        return ListePersonen.FirstOrDefault(p => p.Id == id);
     }
 }
