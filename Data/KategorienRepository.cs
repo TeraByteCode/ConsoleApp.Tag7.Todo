@@ -45,6 +45,11 @@ public class KategorienRepository
         ListeKategorien.Remove(kategorie);
     }
 
+    public Kategorie? GetById(int id)
+    {
+        return ListeKategorien.FirstOrDefault(p => p.Id == id);
+    }
+
     public List<Kategorie> GetAll()
     {
         return ListeKategorien;

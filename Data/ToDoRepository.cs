@@ -1,12 +1,11 @@
-﻿namespace ConsoleApp.Tag7.Todo.Data;
+﻿using ConsoleApp.Tag7.Todo.Domain;
 
-using ConsoleApp.Tag7.Todo.Domain;
-
-public class TotoRepository
+namespace ConsoleApp.Tag7.Todo.Data;
+public class ToDoRepository
 {
-    public List<Todo> ListeTodos = [];
+    public List<ToDo> ListeTodos = [];
 
-    public void Add(Todo todo)
+    public void Add(ToDo todo)
     {
         if (todo.Id == 0)
         {
@@ -19,7 +18,7 @@ public class TotoRepository
         }
         ListeTodos.Add(todo);
     }
-    public void Update(int id, Todo todo)
+    public void Update(int id, ToDo todo)
     {
         var index = ListeTodos.FindIndex(p => p.Id == id);
         if (index == -1)
@@ -29,7 +28,7 @@ public class TotoRepository
         ListeTodos[index] = todo;
     }
 
-    public void Delete(Todo todo)
+    public void Delete(ToDo todo)
     {
         ListeTodos.Remove(todo);
     }
@@ -43,8 +42,13 @@ public class TotoRepository
         }
         ListeTodos.Remove(todo);
     }
-    public List<Todo> GetAll()
+    public List<ToDo> GetAll()
     {
         return ListeTodos;
+    }
+
+    public ToDo? GetById(int id)
+    {
+        return ListeTodos.FirstOrDefault(p => p.Id == id);
     }
 }

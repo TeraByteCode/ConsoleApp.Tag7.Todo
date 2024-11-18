@@ -1,8 +1,6 @@
-﻿using ConsoleApp.Tag7.Todo.Domain.Enums;
+﻿namespace ConsoleApp.Tag7.Todo.Domain;
 
-namespace ConsoleApp.Tag7.Todo.Domain;
-
-public class Todo
+public class ToDo
 {
     public int Id { get; set; }
     public bool Erledigt { get; set; }

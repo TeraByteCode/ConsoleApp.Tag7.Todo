@@ -10,5 +10,5 @@ public class Kategorie
     public DateTime Aenderungsdatum { get; set; }
     public Person Ersteller { get; set; }
     public Person Bearbeiter { get; set; }
-    public List<Todo> Todos { get; set; }
+    public List<ToDo> Todos { get; set; }
 }
