@@ -4,8 +4,10 @@ namespace ConsoleApp.Tag7.Todo.Data;
 
 public class PersonenRepository
 {
-    public List<Person> ListePersonen = [];
+    public List<Person> ListePersonen = []; //Property werden vor dem Konstruktor definiert und initialisiert
 
+    //Hier ist der Konstruktor
+    //Der Konstruktor wird aufgerufen, wenn ein Objekt von Typ PersonenRepository instanziiert wird
     public PersonenRepository()
     {
         ListePersonen.Add(new Person { Id = 1, Name = "Hans" });

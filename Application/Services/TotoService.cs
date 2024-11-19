@@ -98,6 +98,22 @@ public class TotoService
         KategorienRepository.Update(id, kategorie);
     }
 
+    //Method die nach Kategorie sucht ==> GetKategorie(int id = 1)
+    public Kategorie? GetKategorie(int id)
+    {
+        return KategorienRepository.GetById(id);
+    }
+
+    public string PrintKategorie()
+    {
+        var text = string.Empty;
+        foreach (var item in KategorienRepository.GetAll())
+        {
+            text += $"ID: {item.Id}\t, Bezeichnung: {item.Bezeichnung} \n";
+        }
+        return text;
+    }
+
     public void UpdateToDo(int id, ToDo todo)
     {
         var t = TodoRepository.GetById(id);

@@ -6,6 +6,10 @@ public class KategorienRepository
 {
     public List<Kategorie> ListeKategorien = [];
 
+    public KategorienRepository()
+    {
+        ListeKategorien.Add(new Kategorie { Bezeichnung = "Einkaufen", Id = 1, Erstellungsdatum = DateTime.Now });
+    }
     public void Add(Kategorie kategorie)
     {
         if (kategorie.Id == 0)
