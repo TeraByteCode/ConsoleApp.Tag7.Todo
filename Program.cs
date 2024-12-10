@@ -34,7 +34,12 @@ namespace ConsoleApp.Tag7.Todo
                         Console.WriteLine("Bitte wählen Sie eine andere Kategorie aus");
                         Console.WriteLine(service.PrintKategorie());
                     }
+                    Console.WriteLine("Bitte geben Sie die Beschreibung der ToDo ein:");
+                    var bezeichnung = Console.ReadLine();
+                    var todo = new ToDo { Beschreibung = bezeichnung, Kategorie = kategorie };
+                    Console.WriteLine(todo.ToString());
 
+                    service.AddToDo(todo);
 
                     //service.AddKategorie(kategorie);
                 }

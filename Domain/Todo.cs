@@ -19,4 +19,9 @@ public class ToDo
     public DateTime Fälligkeitsdatum { get; set; }
     public Person Ansprechperson { get; set; }
     public string Bemerkungen { get; set; }
+
+    public override string ToString()
+    {
+        return $"ToDo:{Id}, Beschreibung: {Beschreibung}, Person: {Ersteller?.Name} {Ersteller?.Vorname}, Kategorie: {Kategorie?.Beschreibung}";
+    }
 }

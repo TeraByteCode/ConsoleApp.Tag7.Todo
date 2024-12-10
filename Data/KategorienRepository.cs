@@ -8,7 +8,20 @@ public class KategorienRepository
 
     public KategorienRepository()
     {
-        ListeKategorien.Add(new Kategorie { Bezeichnung = "Einkaufen", Id = 1, Erstellungsdatum = DateTime.Now });
+        var kat1 = new Kategorie { Bezeichnung = "Einkaufen", Id = 1, Erstellungsdatum = DateTime.Now };
+        ListeKategorien.Add(kat1);
+
+        var katX = ListeKategorien.FirstOrDefault(kategorie => kategorie.Id == 1);
+        var katY = ListeKategorien[0];
+
+        foreach (var kategorie in ListeKategorien)
+        {
+            if (kategorie.Id == 1)
+            {
+                katX = kategorie;
+                break;
+            }
+        }
     }
     public void Add(Kategorie kategorie)
     {

@@ -5,9 +5,9 @@ namespace ConsoleApp.Tag7.Todo.Application.Services;
 
 public class TotoService
 {
-    public KategorienRepository KategorienRepository { get; set; }
-    public ToDoRepository TodoRepository { get; set; }
-    public PersonenRepository PersonRepository { get; set; }
+    private readonly KategorienRepository KategorienRepository;
+    public readonly ToDoRepository TodoRepository;
+    public readonly PersonenRepository PersonRepository;
     private Person AktuelleBenutzer { get; set; }
 
     public TotoService()
@@ -19,6 +19,8 @@ public class TotoService
 
     public void SetAktuellerBenutzer(string IdOrNAme)
     {
+
+
         Person? p;
         if (int.TryParse(IdOrNAme, out _))
         {
@@ -63,6 +65,7 @@ public class TotoService
         todo.Bearbeiter = AktuelleBenutzer;
         todo.Erstellungsdatum = DateTime.Now;
         todo.Bearbeitungsdatum = DateTime.Now;
+        todo.Id = TodoRepository.ListeTodos.Count + 1;
         if (string.IsNullOrEmpty(todo.Beschreibung))
         {
             throw new ArgumentNullException(nameof(todo.Beschreibung));
